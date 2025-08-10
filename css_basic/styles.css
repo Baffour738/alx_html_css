@@ -1,1 +1,132 @@
+/*
+ * General body styling to set up the main layout container.
+ * Uses Flexbox to arrange header, main, and footer in a column.
+ */
+body {
+    display: flex; /* Enables Flexbox for direct children */
+    flex-direction: column; /* Stacks children vertically */
+    min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+    margin: 0; /* Remove default body margin */
+    font-family: 'Inter', sans-serif; /* Set a clean font for the page */
+}
 
+/*
+ * Styling for the main content area.
+ * Uses Flexbox to arrange article and aside horizontally.
+ * 'flex: auto' allows it to grow and shrink as needed, filling available space.
+ */
+main {
+    display: flex; /* Enables Flexbox for direct children */
+    flex-direction: row; /* Arranges children horizontally */
+    flex: auto; /* Allows main to grow/shrink and occupy available vertical space */
+    padding: 16px; /* Add some padding around the main content */
+    gap: 16px; /* Space between article and aside */
+}
+
+/*
+ * Styling for the main article content.
+ * 'flex: 2' makes it take up 2/3 of the available width within the main container.
+ * 'overflow-y: auto' enables vertical scrolling if content overflows.
+ */
+article {
+    flex: 2; /* Takes 2 parts of the available space */
+    padding: 16px; /* Padding inside the article */
+    border-radius: 8px; /* Rounded corners for aesthetic appeal */
+    background-color: #f9f9f9; /* Light background for content area */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow-y: auto; /* Enables vertical scrolling for content overflow */
+}
+
+/*
+ * Styling for the aside (sidebar) content.
+ * 'flex: 1' makes it take up 1/3 of the available width within the main container.
+ * 'overflow-y: auto' enables vertical scrolling if content overflows.
+ */
+aside {
+    flex: 1; /* Takes 1 part of the available space */
+    padding: 16px; /* Padding inside the aside */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #eef; /* Slightly different background for sidebar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow-y: auto; /* Enables vertical scrolling for content overflow */
+}
+
+/* Basic styling for header and footer for visual separation */
+header, footer {
+    background-color: #333;
+    color: white;
+    padding: 16px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 8px;
+}
+
+/* Navigation bar styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Table styling for readability */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px; /* Apply rounded corners to the table */
+    overflow: hidden; /* Ensures rounded corners are visible */
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+table tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Ensure images within the article are responsive */
+article img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below images */
+    margin: 16px auto; /* Center images and add vertical spacing */
+}
+
+/* Styling for links in the footer */
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
